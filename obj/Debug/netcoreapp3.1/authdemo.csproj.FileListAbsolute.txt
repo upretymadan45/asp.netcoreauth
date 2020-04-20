@@ -159,3 +159,8 @@ C:\Users\msquare\source\repos\authdemo\authdemo\obj\Debug\netcoreapp3.1\Razor\Vi
 C:\Users\msquare\source\repos\authdemo\authdemo\obj\Debug\netcoreapp3.1\Razor\Views\UserRoleManagement\DisplayRoles.cshtml.g.cs
 C:\Users\msquare\source\repos\authdemo\authdemo\obj\Debug\netcoreapp3.1\Razor\Views\UserRoleManagement\AddUserToRole.cshtml.g.cs
 C:\Users\msquare\source\repos\authdemo\authdemo\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_TopMenuPartial.cshtml.g.cs
+C:\Users\msquare\source\repos\authdemo\authdemo\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Login.cshtml.g.cs
+C:\Users\msquare\source\repos\authdemo\authdemo\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Register.cshtml.g.cs
+C:\Users\msquare\source\repos\authdemo\authdemo\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\_ViewImports.cshtml.g.cs
+C:\Users\msquare\source\repos\authdemo\authdemo\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ValidationScriptsPartial.cshtml.g.cs
+C:\Users\msquare\source\repos\authdemo\authdemo\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ViewImports.cshtml.g.cs

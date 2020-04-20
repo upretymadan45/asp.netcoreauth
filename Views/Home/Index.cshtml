@@ -1,8 +1,18 @@
-﻿@{
+﻿@inject SignInManager<IdentityUser> signInManager
+
+@{
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <a asp-action="Index" asp-controller="UserRoleManagement" class="btn btn-outline-secondary">Configure User Roles</a>
-</div>
+@if (signInManager.IsSignedIn(User))
+{
+    <div class="text-center">
+        <h1 class="display-4">Welcome</h1>
+        <a asp-action="Index" asp-controller="UserRoleManagement" class="btn btn-outline-secondary">Configure User Roles</a>
+    </div>
+}
+else
+{
+    <h1 class="display-4 text-center">Welcome</h1>
+    <h1 class="text-center">Please login to view more...</h1>
+}

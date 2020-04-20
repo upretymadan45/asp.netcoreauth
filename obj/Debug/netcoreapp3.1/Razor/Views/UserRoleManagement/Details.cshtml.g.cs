@@ -26,8 +26,15 @@ using authdemo.Models;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 3 "C:\Users\msquare\source\repos\authdemo\authdemo\Views\_ViewImports.cshtml"
+using Microsoft.AspNetCore.Identity;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"5cc3c5ee3519e9e89ccf477be385eb866caaea85", @"/Views/UserRoleManagement/Details.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"381fc6202a630c1824bb2ba770994e6644c1507b", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"abb463851519e4b7a084c2ab06c4128cce3182cc", @"/Views/_ViewImports.cshtml")]
     public class Views_UserRoleManagement_Details : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<List<string>>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("class", new global::Microsoft.AspNetCore.Html.HtmlString("btn btn-outline-danger"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -128,7 +135,7 @@ Write(await Html.PartialAsync("_TopMenuPartial"));
 #line hidden
 #nullable disable
             WriteLiteral("</td>\r\n                                <td>\r\n                                    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5cc3c5ee3519e9e89ccf477be385eb866caaea856726", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5cc3c5ee3519e9e89ccf477be385eb866caaea856918", async() => {
                 WriteLiteral("Remove Role");
             }
             );
