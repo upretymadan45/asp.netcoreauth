@@ -31,6 +31,18 @@ namespace authdemo.Controllers
             return View();
         }
 
+        [Authorize(Policy ="VotingPolicy")]
+        public IActionResult Vote()
+        {
+            return View();
+        }
+
+        [Authorize(Policy = "DiscoAccess")]
+        public IActionResult DiscoAccess()
+        {
+            return View();
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

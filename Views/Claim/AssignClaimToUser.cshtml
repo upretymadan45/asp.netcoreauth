@@ -1,0 +1,68 @@
+﻿@model List<System.Security.Claims.Claim>
+
+@{
+    ViewData["Title"] = "All Roles";
+}
+
+<h3 class="text-center">Add Claim To User</h3>
+<hr />
+
+@await Html.PartialAsync("_TopMenuPartial")
+
+
+<div class="row">
+    <div class="col-6">
+        <h3 class="text-center">Add claim to user: @ViewBag.UserName</h3>
+        <form asp-action="AssignClaimToUser" method="Post">
+            <div class="form-group">
+                <input type="hidden" id="userId" name="userId" value="@ViewBag.UserId"/>
+                <label>Select Claim</label>
+                <select name="claimId" id="claimId" class="form-control" asp-items="@ViewBag.Claims">
+                    <option selected disabled>--Select Claim--</option>
+                </select>
+                <br/>
+                <input type="submit" value="Save" class="btn btn-outline-primary btn-block" />
+                <a asp-action="Index" class="btn btn-outline-danger btn-block">Cancel</a>
+            </div>
+        </form>
+    </div>
+
+
+    <div class="col-6" style="border-left:1px solid black;">
+        <h3 class="text-center">User Claims</h3>
+        @if (Model.Count == 0)
+        {
+            <p>No user claim found!</p>
+        }
+        else
+        {
+            <table class="table">
+                <thead class="bg-dark text-white">
+                    <tr>
+                        <th>Claim Type</th>
+                        <th>Claim Value</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var c in Model)
+                    {
+                        <tr>
+                            <td>@c.Type</td>
+                            <td>@c.Value</td>
+                            <td>
+                                <a class="btn btn-outline-danger"
+                                   asp-route-claimValue="@c.Value"
+                                   asp-route-claimType="@c.Type"
+                                   asp-route-userId="@ViewBag.UserId"
+                                   asp-action="RemoveClaimFromUser"
+                                   onclick="return confirm('Are you sure to remove this claim from user?')">Remove Claim</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+    </div>
+</div>
+

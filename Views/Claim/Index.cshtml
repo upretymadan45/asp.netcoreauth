@@ -1,0 +1,50 @@
+﻿@model List<Claim>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h3 class="text-center">Application claims</h3>
+<hr />
+
+<div class="container">
+
+    @await Html.PartialAsync("_TopMenuPartial")
+
+    <div class="row">
+        <div class="col-12">
+            @if (Model.Count == 0)
+            {
+                <p>No claim(s) found!</p>
+            }
+            else
+            {
+                <table class="table">
+                    <thead class="bg-dark text-white">
+                        <tr>
+                            <th>Claim Type</th>
+                            <th>Claim Value</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var c in Model)
+                        {
+                            <tr>
+                                <td>@c.ClaimType</td>
+                                <td>@c.ClaimValue</td>
+                                <td>
+                                    <a class="btn btn-danger"
+                                       asp-route-id="@c.Id"
+                                       asp-action="Delete"
+                                       onclick='return confirm("Are you sure to remove this claim?")'>Delete</a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            }
+        </div>
+    </div>
+</div>
+

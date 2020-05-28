@@ -1,0 +1,30 @@
+﻿@model Claim
+
+@{
+    ViewData["Title"] = "All Roles";
+}
+
+<h3 class="text-center">New Claim Management</h3>
+<hr />
+
+@await Html.PartialAsync("_TopMenuPartial")
+
+
+<div class="row">
+    <div class="col-6">
+        <form asp-action="New" method="Post">
+            <div class="form-group">
+                <label asp-for="ClaimType"></label>
+                <input type="text" asp-for="ClaimType" class="form-control" placeholder="Enter claim name.." />
+            </div>
+            <div class="form-group">
+                <label asp-for="ClaimValue"></label>
+                <input type="text" asp-for="ClaimValue" class="form-control" placeholder="Enter claim value.."/>
+            </div>
+            
+            <input type="submit" value="Create" class="btn btn-outline-primary btn-block" />
+               
+        </form>
+    </div>
+</div>
+

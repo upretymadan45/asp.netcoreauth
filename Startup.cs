@@ -6,6 +6,8 @@ using authdemo.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using authdemo.Authorization;
+using Microsoft.AspNetCore.Authorization;
 
 namespace authdemo
 {
@@ -30,7 +32,25 @@ namespace authdemo
                 .AddDefaultTokenProviders()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
 
+
+            services.AddAuthorization(options =>
+            {
+                options.AddPolicy("VotingPolicy", policy => {
+                    policy.RequireClaim("experience");
+                });
+
+                options.AddPolicy("DiscoAccess", policy =>
+                {
+                    policy.Requirements.Add(new MinimumAgeRequirement(18));
+                });
+            });
+
+            services.AddSingleton<IAuthorizationHandler, MinimumAgeHandler>();
+
+
+
             services.AddControllersWithViews();
+
             services.AddRazorPages();
         }
 
@@ -54,6 +74,7 @@ namespace authdemo
             app.UseRouting();
 
             app.UseAuthentication();
+
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
